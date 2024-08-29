@@ -4,6 +4,14 @@ https://github.com/ByteGrad/react-hook-form-with-zod-and-server-side
 https://github.com/Annie-Huang/react-hook-form-with-zod-and-server-side
 
 https://nextjs.org/docs/getting-started/installation
+https://www.npmjs.com/package/react-hook-form       Weekly Downloads
+                                                    5,624,585
+                                                    Support Yup, Zod, AJV, Superstruct, Joi and others
+https://www.npmjs.com/package/formik                Weekly Downloads
+                                                    2,428,658
+
+
+https://react-hook-form.com/get-started#Applyvalidation
 ---------------------------------------------------------------------------------
 
 PS C:\react> npx create-next-app@latest
@@ -26,4 +34,13 @@ Using npm.
 Initializing project with template: app-tw
 ....
 
+------------------------------------------------------------------------------------------
+https://react-hook-form.com/get-started#Applyvalidation
+Apply validation
+React Hook Form makes form validation easy by aligning with the existing HTML standard for form validation.
+
+
+https://react-hook-form.com/
+Isolate Re-renders
+You can see how to limit the re-rendering here....
 
