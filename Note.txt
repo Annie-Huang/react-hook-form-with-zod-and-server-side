@@ -35,6 +35,9 @@ Initializing project with template: app-tw
 ....
 
 ------------------------------------------------------------------------------------------
+PS C:\react\react-hook-form-with-zod-and-server-side> npm install react-hook-form
+
+------------------------------------------------------------------------------------------
 https://react-hook-form.com/get-started#Applyvalidation
 Apply validation
 React Hook Form makes form validation easy by aligning with the existing HTML standard for form validation.
