@@ -11,6 +11,7 @@ export const FormWithReactHookFormAndZodAndServer = () => {
     handleSubmit, // will default handle e.preventDefault();
     formState: { errors, isSubmitting },
     reset,
+    setError,
     getValues,
   } = useForm<TSignUpSchema>({ resolver: zodResolver(signUpSchema) });
 
@@ -35,7 +36,21 @@ export const FormWithReactHookFormAndZodAndServer = () => {
       return;
     }
 
-    reset();
+    if (responseData.errors) {
+      const errors = responseData.errors;
+      if (errors.email) {
+        setError('email', { type: 'server', message: errors.email });
+      } else if (errors.password) {
+        setError('password', { type: 'server', message: errors.password });
+      } else if (errors.confirmPassword) {
+        setError('confirmPassword', {
+          type: 'server',
+          message: errors.confirmPassword,
+        });
+      }
+    }
+
+    // reset();
   };
 
   return (
