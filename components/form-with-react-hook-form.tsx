@@ -29,6 +29,9 @@ export const FormWithReactHookForm = () => {
         placeholder='Email'
         className='px-4 py-2 rounded'
       />
+      {errors.email && (
+        <p className='text-red-500'>{`${errors.email.message}`}</p>
+      )}
       <input
         {...register('password', {
           required: 'Password is required',
@@ -41,6 +44,9 @@ export const FormWithReactHookForm = () => {
         placeholder='Password'
         className='px-4 py-2 rounded'
       />
+      {errors.password && (
+        <p className='text-red-500'>{`${errors.password.message}`}</p>
+      )}
       <input
         {...register('confirmPassword', {
           required: 'Confirm password is required',
@@ -49,6 +55,9 @@ export const FormWithReactHookForm = () => {
         placeholder='Confirm password'
         className='px-4 py-2 rounded'
       />
+      {errors.confirmPassword && (
+        <p className='text-red-500'>{`${errors.confirmPassword.message}`}</p>
+      )}
 
       <button
         disabled={isSubmitting}
