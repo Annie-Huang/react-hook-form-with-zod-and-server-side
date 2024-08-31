@@ -47,3 +47,7 @@ https://react-hook-form.com/
 Isolate Re-renders
 You can see how to limit the re-rendering here....
 
+
+Why do we use zod:
+So we have one schema and use to do the validation on both client and server.
+Or you may save something in localstorage, when you retrieve it and before you use it, you may want to check if it passes validation.
