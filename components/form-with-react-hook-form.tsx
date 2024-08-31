@@ -1,33 +1,16 @@
 'use client';
 
 import React, { useState } from 'react';
+import { useForm } from 'react-hook-form';
 
 export const FormWithReactHookForm = () => {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [confirmPassword, setConfirmPassword] = useState('');
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [errors, setErrors] = useState<string[]>([]);
-
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-
-    if (password !== confirmPassword) {
-      setErrors(['Password and confirm password must match']);
-      setIsSubmitting(false);
-      return;
-    }
-
-    // TODO: submit to server
-    // ...
-    await new Promise((resolve) => setTimeout(resolve, 1000));
-
-    setEmail('');
-    setPassword('');
-    setConfirmPassword('');
-    setIsSubmitting(false);
-  };
+  const {
+    register,
+    handleSubmit,
+    formState: { errors, isSubmitting },
+    reset,
+    getValues,
+  } = useForm();
 
   return (
     <form onSubmit={handleSubmit} className='flex flex-col gap-y-2'>
