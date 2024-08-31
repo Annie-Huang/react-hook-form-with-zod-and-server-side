@@ -23,7 +23,14 @@ export const FormWithReactHookFormAndZodAndServer = () => {
     // await new Promise((resolve) => setTimeout(resolve, 1000));
     const response = await fetch('/api/signup', {
       method: 'POST',
-      body: JSON.stringify(data),
+      // body: JSON.stringify(data),
+      // To test server side error, the following will display error of: Expected string, received number
+      body: JSON.stringify({
+        email: data.email,
+        password: data.password,
+        // confirmPassword: data.confirmPassword,
+        confirmPassword: 7390147301857,
+      }),
       headers: {
         'Content-Type': 'application/json',
       },
