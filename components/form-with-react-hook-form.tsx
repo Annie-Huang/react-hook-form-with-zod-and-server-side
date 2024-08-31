@@ -1,19 +1,26 @@
 'use client';
 
 import React, { useState } from 'react';
-import { useForm } from 'react-hook-form';
+import { FieldValues, useForm } from 'react-hook-form';
 
 export const FormWithReactHookForm = () => {
   const {
     register,
-    handleSubmit,
+    handleSubmit, // will default handle e.preventDefault();
     formState: { errors, isSubmitting },
     reset,
     getValues,
   } = useForm();
 
+  // You will not get any data from onSubmit call if the field doesn't pass validation
+  const onSubmit = async (data: FieldValues) => {
+    // TODO: submit to server
+    // ...
+    await new Promise((resolve) => setTimeout(resolve, 1000));
+  };
+
   return (
-    <form className='flex flex-col gap-y-2'>
+    <form onSubmit={handleSubmit(onSubmit)} className='flex flex-col gap-y-2'>
       <input
         {...register('email', { required: 'Email is required' })}
         type='email'
