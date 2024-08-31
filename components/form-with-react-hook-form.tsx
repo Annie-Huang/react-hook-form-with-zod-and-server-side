@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React from 'react';
 import { FieldValues, useForm } from 'react-hook-form';
 
 export const FormWithReactHookForm = () => {
@@ -50,6 +50,7 @@ export const FormWithReactHookForm = () => {
       <input
         {...register('confirmPassword', {
           required: 'Confirm password is required',
+          validate: (value) => value === 'password' || 'Passwords must match', // short cut, false || 'Password must match' => 'Password must match'
         })}
         type='password'
         placeholder='Confirm password'
