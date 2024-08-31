@@ -15,18 +15,21 @@ export const FormWithReactHookForm = () => {
   return (
     <form className='flex flex-col gap-y-2'>
       <input
+        {...register('email')}
         type='email'
         required
         placeholder='Email'
         className='px-4 py-2 rounded'
       />
       <input
+        {...register('password')}
         type='password'
         required
         placeholder='Password'
         className='px-4 py-2 rounded'
       />
       <input
+        {...register('confirmPassword')}
         type='password'
         required
         placeholder='Confirm password'
