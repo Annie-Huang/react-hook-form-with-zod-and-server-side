@@ -19,7 +19,21 @@ export const FormWithReactHookFormAndZodAndServer = () => {
   const onSubmit = async (data: TSignUpSchema) => {
     // TODO: submit to server
     // ...
-    await new Promise((resolve) => setTimeout(resolve, 1000));
+    // await new Promise((resolve) => setTimeout(resolve, 1000));
+    const response = await fetch('/api/signup', {
+      method: 'POST',
+      body: JSON.stringify(data),
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    });
+    const responseData = await response.json();
+
+    if (!response.ok) {
+      //response status is not 2xx
+      alert('Submitting form failed!');
+      return;
+    }
 
     reset();
   };
