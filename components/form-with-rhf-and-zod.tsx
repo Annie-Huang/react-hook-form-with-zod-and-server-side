@@ -2,22 +2,8 @@
 
 import React from 'react';
 import { FieldValues, useForm } from 'react-hook-form';
-import { z } from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
-
-const signUpSchema = z
-  .object({
-    email: z.string().email(),
-    password: z.string().min(10, 'Password must be at least 10 characters'),
-    confirmPassword: z.string(),
-  })
-  // Very smart way to do combine validation!!!
-  .refine((data) => data.password === data.confirmPassword, {
-    message: 'Password must match',
-    path: ['confirmPassword'],
-  });
-
-type TSignUpSchema = z.infer<typeof signUpSchema>;
+import { signUpSchema, TSignUpSchema } from '@/lib/types';
 
 export const FormWithReactHookFormAndZod = () => {
   const {
