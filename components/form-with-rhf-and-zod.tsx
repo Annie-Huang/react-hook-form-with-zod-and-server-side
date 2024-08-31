@@ -17,6 +17,8 @@ const signUpSchema = z
     path: ['confirmPassword'],
   });
 
+type TSignUpSchema = z.infer<typeof signUpSchema>;
+
 export const FormWithReactHookFormAndZod = () => {
   const {
     register,
@@ -24,10 +26,11 @@ export const FormWithReactHookFormAndZod = () => {
     formState: { errors, isSubmitting },
     reset,
     getValues,
-  } = useForm({ resolver: zodResolver(signUpSchema) });
+  } = useForm<TSignUpSchema>({ resolver: zodResolver(signUpSchema) });
 
   // You will not get any data from onSubmit call if the field doesn't pass validation
-  const onSubmit = async (data: FieldValues) => {
+  // const onSubmit = async (data: FieldValues) => {
+  const onSubmit = async (data: TSignUpSchema) => {
     // TODO: submit to server
     // ...
     await new Promise((resolve) => setTimeout(resolve, 1000));
