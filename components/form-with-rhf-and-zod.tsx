@@ -2,6 +2,13 @@
 
 import React from 'react';
 import { FieldValues, useForm } from 'react-hook-form';
+import { z } from 'zod';
+
+const signUpSchema = z.object({
+  email: z.string().email(),
+  password: z.string().min(10, 'Password must be at least 10 characters'),
+  confirmPassword: z.string(),
+});
 
 export const FormWithReactHookFormAndZod = () => {
   const {
