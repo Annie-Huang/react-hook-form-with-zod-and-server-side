@@ -24,7 +24,6 @@ export const FormWithReactHookForm = () => {
       <input
         {...register('email', { required: 'Email is required' })}
         type='email'
-        required
         placeholder='Email'
         className='px-4 py-2 rounded'
       />
@@ -37,7 +36,6 @@ export const FormWithReactHookForm = () => {
           },
         })}
         type='password'
-        required
         placeholder='Password'
         className='px-4 py-2 rounded'
       />
@@ -46,12 +44,12 @@ export const FormWithReactHookForm = () => {
           required: 'Confirm password is required',
         })}
         type='password'
-        required
         placeholder='Confirm password'
         className='px-4 py-2 rounded'
       />
 
       <button
+        disabled={isSubmitting}
         type='submit'
         className='bg-blue-500 disabled:bg-gray-500 py-2 rounded'
       >
