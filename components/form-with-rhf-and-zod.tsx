@@ -31,7 +31,7 @@ export const FormWithReactHookFormAndZod = () => {
   return (
     <form onSubmit={handleSubmit(onSubmit)} className='flex flex-col gap-y-2'>
       <input
-        {...register('email', { required: 'Email is required' })}
+        {...register('email')}
         type='email'
         placeholder='Email'
         className='px-4 py-2 rounded'
@@ -40,13 +40,7 @@ export const FormWithReactHookFormAndZod = () => {
         <p className='text-red-500'>{`${errors.email.message}`}</p>
       )}
       <input
-        {...register('password', {
-          required: 'Password is required',
-          minLength: {
-            value: 10,
-            message: 'Password must be at least 10 characters',
-          },
-        })}
+        {...register('password')}
         type='password'
         placeholder='Password'
         className='px-4 py-2 rounded'
@@ -55,10 +49,7 @@ export const FormWithReactHookFormAndZod = () => {
         <p className='text-red-500'>{`${errors.password.message}`}</p>
       )}
       <input
-        {...register('confirmPassword', {
-          required: 'Confirm password is required',
-          validate: (value) => value === 'password' || 'Passwords must match', // short cut, false || 'Password must match' => 'Password must match'
-        })}
+        {...register('confirmPassword')}
         type='password'
         placeholder='Confirm password'
         className='px-4 py-2 rounded'
