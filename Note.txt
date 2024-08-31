@@ -36,7 +36,7 @@ Initializing project with template: app-tw
 
 ------------------------------------------------------------------------------------------
 PS C:\react\react-hook-form-with-zod-and-server-side> npm install react-hook-form
-
+PS C:\react\react-hook-form-with-zod-and-server-side> npm install zod @hookform/resolvers
 ------------------------------------------------------------------------------------------
 https://react-hook-form.com/get-started#Applyvalidation
 Apply validation
