@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { FieldValues, useForm } from 'react-hook-form';
+import { FieldValues, SubmitHandler, useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { signUpSchema, TSignUpSchema } from '@/lib/types';
 
@@ -17,6 +17,7 @@ export const FormWithReactHookFormAndZodAndServer = () => {
 
   // You will not get any data from onSubmit call if the field doesn't pass validation
   // const onSubmit = async (data: FieldValues) => {
+  // const onSubmit: SubmitHandler<TSignUpSchema> = async (data) => {  // <-- this also works.
   const onSubmit = async (data: TSignUpSchema) => {
     // TODO: submit to server
     // ...
