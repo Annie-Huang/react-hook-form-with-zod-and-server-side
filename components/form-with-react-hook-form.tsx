@@ -2,6 +2,7 @@
 
 import React from 'react';
 import { FieldValues, useForm } from 'react-hook-form';
+import { type } from 'node:os';
 
 export const FormWithReactHookForm = () => {
   const {
@@ -50,6 +51,12 @@ export const FormWithReactHookForm = () => {
       <input
         {...register('confirmPassword', {
           required: 'Confirm password is required',
+          // validate: (value) => {
+          //   if (value !== 'password') {
+          //     return 'Passwords must match';
+          //   }
+          //   return true;
+          // },
           validate: (value) => value === 'password' || 'Passwords must match', // short cut, false || 'Password must match' => 'Password must match'
         })}
         type='password'
