@@ -56,6 +56,13 @@ export const FormWithReactHookFormAndZodAndServer = () => {
           message: errors.confirmPassword,
         });
       }
+
+      // You can also set error in the root level:
+      // setError('root', {message: 'This is the root error'}}
+      // And then in the template, you can do
+      // {errors.root && (
+      //   <p className='text-red-500'>{`${errors.root.message}`}</p>
+      // )}
     }
 
     // Should enable reset for the real project.
