@@ -13,6 +13,26 @@ export const FormWithReactHookForm = () => {
     getValues,
   } = useForm();
 
+  // Set default value:
+  // type FormFields = {
+  //   email: string;
+  //   password: string;
+  //   confirmPassword: string;
+  // };
+  // const {
+  //   register,
+  //   handleSubmit, // will default handle e.preventDefault();
+  //   formState: { errors, isSubmitting },
+  //   reset,
+  //   getValues,
+  // } = useForm<FormFields>({
+  //   defaultValues: {
+  //     email: 'test@email.com',
+  //     password: '',
+  //     confirmPassword: '',
+  //   },
+  // });
+
   // You will not get any data from onSubmit call if the field doesn't pass validation
   const onSubmit = async (data: FieldValues) => {
     // TODO: submit to server
