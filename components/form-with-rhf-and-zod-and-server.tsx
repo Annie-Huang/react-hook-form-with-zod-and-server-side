@@ -81,6 +81,21 @@ export const FormWithReactHookFormAndZodAndServer = () => {
       {errors.email && (
         <p className='text-red-500'>{`${errors.email.message}`}</p>
       )}
+
+      {/* Explain how you can do it for number field and date field. */}
+      {/*<input*/}
+      {/*  {...register('age', {valueAsNumber: true})}*/}
+      {/*  type='number'*/}
+      {/*  placeholder='Age'*/}
+      {/*  className='px-4 py-2 rounded'*/}
+      {/*/>*/}
+      {/*<input*/}
+      {/*  {...register('birthday', {valueAsDate: true})}*/}
+      {/*  type='string'*/}
+      {/*  placeholder='Birthday'*/}
+      {/*  className='px-4 py-2 rounded'*/}
+      {/*/>*/}
+
       <input
         {...register('password')}
         type='password'
