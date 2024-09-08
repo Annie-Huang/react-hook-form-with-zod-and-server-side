@@ -1,5 +1,13 @@
-import { z } from 'zod';
+import { z, ZodType } from 'zod';
 
+export type FormData = {
+  email: string;
+  password: string;
+  confirmPassword: string;
+};
+
+// If you don't use z.infer<typeof signUpSchema>, you can do it like with ZodType<FormData>
+// export const signUpSchema: ZodType<FormData> = z
 export const signUpSchema = z
   .object({
     email: z.string().email(),

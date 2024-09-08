@@ -3,7 +3,7 @@
 import React from 'react';
 import { FieldValues, SubmitHandler, useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
-import { signUpSchema, TSignUpSchema } from '@/lib/types';
+import { FormData, signUpSchema, TSignUpSchema } from '@/lib/types';
 
 export const FormWithReactHookFormAndZodAndServer = () => {
   const {
@@ -14,6 +14,7 @@ export const FormWithReactHookFormAndZodAndServer = () => {
     setError,
     getValues,
   } = useForm<TSignUpSchema>({ resolver: zodResolver(signUpSchema) });
+  // } = useForm<FormData>({ resolver: zodResolver(signUpSchema) });
 
   // You will not get any data from onSubmit call if the field doesn't pass validation
   // const onSubmit = async (data: FieldValues) => {
